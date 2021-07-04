@@ -10,14 +10,6 @@ class QuizScreen extends StatefulWidget {
 }
 
 class _QuizScreenState extends State<QuizScreen> {
-  // Icon(
-  // Icons.check_outlined,
-  // color: Colors.green,
-  // ),
-  // Icon(
-  // Icons.close,
-  // color: Colors.red,
-  // ),
   int total = 0;
   List<int> scores = [0, 0, 0, 0, 0];
   List<Icon> trackingScore = [
@@ -98,9 +90,17 @@ class _QuizScreenState extends State<QuizScreen> {
                       }
                     });
                   },
-                  child: Text(
-                    '${QuizQuestions().quizQuestions[i].option1}',
-                    style: TextStyle(),
+                  child: Card(
+                    child: Container(
+                      height: 50,
+                      width: 400,
+                      child: Center(
+                        child: Text(
+                          '${QuizQuestions().quizQuestions[i].option1}',
+                          style: TextStyle(),
+                        ),
+                      ),
+                    ),
                   ),
                 ),
                 SizedBox(
@@ -126,9 +126,17 @@ class _QuizScreenState extends State<QuizScreen> {
                       }
                     });
                   },
-                  child: Text(
-                    '${QuizQuestions().quizQuestions[i].option2}',
-                    style: TextStyle(),
+                  child: Card(
+                    child: Container(
+                      height: 50,
+                      width: 400,
+                      child: Center(
+                        child: Text(
+                          '${QuizQuestions().quizQuestions[i].option2}',
+                          style: TextStyle(),
+                        ),
+                      ),
+                    ),
                   ),
                 ),
                 SizedBox(
@@ -154,9 +162,17 @@ class _QuizScreenState extends State<QuizScreen> {
                       }
                     });
                   },
-                  child: Text(
-                    '${QuizQuestions().quizQuestions[i].option3}',
-                    style: TextStyle(),
+                  child: Card(
+                    child: Container(
+                      height: 50,
+                      width: 400,
+                      child: Center(
+                        child: Text(
+                          '${QuizQuestions().quizQuestions[i].option3}',
+                          style: TextStyle(),
+                        ),
+                      ),
+                    ),
                   ),
                 ),
                 SizedBox(
@@ -182,9 +198,17 @@ class _QuizScreenState extends State<QuizScreen> {
                       }
                     });
                   },
-                  child: Text(
-                    '${QuizQuestions().quizQuestions[i].option4}',
-                    style: TextStyle(),
+                  child: Card(
+                    child: Container(
+                      height: 50,
+                      width: 400,
+                      child: Center(
+                        child: Text(
+                          '${QuizQuestions().quizQuestions[i].option4}',
+                          style: TextStyle(),
+                        ),
+                      ),
+                    ),
                   ),
                 ),
                 SizedBox(
