@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kohli_internship/zodiac/logic/find_sign.dart';
+import 'package:kohli_internship/zodiac/modal/zodiac_modal.dart';
+import 'package:kohli_internship/zodiac/screens/zodiac_details.dart';
 
 class ChooseDate extends StatefulWidget {
   @override
@@ -7,7 +9,6 @@ class ChooseDate extends StatefulWidget {
 }
 
 class _ChooseDateState extends State<ChooseDate> {
-  String sign = '';
   String _selectedDay = '';
   String _selectedMonth = '';
   String _selectedYear = '';
@@ -35,6 +36,11 @@ class _ChooseDateState extends State<ChooseDate> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.purple,
+        title: Text('Zodiacs'),
+        centerTitle: true,
+      ),
       body: Stack(
         children: [
           Container(
@@ -92,9 +98,14 @@ class _ChooseDateState extends State<ChooseDate> {
                 if (_finalDate != '')
                   InkWell(
                     onTap: () {
-                      sign = findYourZodiac(
+                      ZodiacDetails sign = findYourZodiac(
                           int.parse(_selectedDay), int.parse(_selectedMonth));
-                      print(sign);
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return ZodiacInformation(
+                          zodiacDetails: sign,
+                        );
+                      }));
 
                       // _presentDatePicker();
                     },

@@ -1,9 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:kohli_internship/zodiac/modal/zodiac_modal.dart';
 
-class ZodiacDetails extends StatelessWidget {
+class ZodiacInformation extends StatelessWidget {
+  final ZodiacDetails zodiacDetails;
+
+  ZodiacInformation({
+    required this.zodiacDetails,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.purple,
+        title: Text('Zodiacs'),
+        centerTitle: true,
+      ),
       body: Stack(
         children: [
           Container(
@@ -25,7 +37,7 @@ class ZodiacDetails extends StatelessWidget {
             child: Column(
               children: [
                 Image(
-                  image: AssetImage('images/zodiac/taurus.gif'),
+                  image: AssetImage('images/zodiac/${zodiacDetails.imgUrl}'),
                   width: MediaQuery.of(context).size.width,
                   height: 400,
                   fit: BoxFit.cover,
