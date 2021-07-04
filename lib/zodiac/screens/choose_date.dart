@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:kohli_internship/widgets/custom_drawer.dart';
 import 'package:kohli_internship/zodiac/logic/find_sign.dart';
 import 'package:kohli_internship/zodiac/modal/zodiac_modal.dart';
 import 'package:kohli_internship/zodiac/screens/zodiac_details.dart';
@@ -36,9 +38,16 @@ class _ChooseDateState extends State<ChooseDate> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: CustomDrawer(),
       appBar: AppBar(
         backgroundColor: Colors.purple,
-        title: Text('Zodiacs'),
+        title: Text(
+          'Find your Zodiac',
+          style: GoogleFonts.dancingScript(
+            fontWeight: FontWeight.bold,
+            fontSize: 30,
+          ),
+        ),
         centerTitle: true,
       ),
       body: Stack(
